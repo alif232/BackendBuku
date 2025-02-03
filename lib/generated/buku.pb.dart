@@ -22,7 +22,6 @@ class Buku extends $pb.GeneratedMessage {
     $core.int? tahunTerbit,
     $core.String? harga,
     $core.int? stok,
-    $core.int? idKategori,
   }) {
     final $result = create();
     if (idBuku != null) {
@@ -46,9 +45,6 @@ class Buku extends $pb.GeneratedMessage {
     if (stok != null) {
       $result.stok = stok;
     }
-    if (idKategori != null) {
-      $result.idKategori = idKategori;
-    }
     return $result;
   }
   Buku._() : super();
@@ -63,7 +59,6 @@ class Buku extends $pb.GeneratedMessage {
     ..a<$core.int>(5, _omitFieldNames ? '' : 'tahunTerbit', $pb.PbFieldType.O3)
     ..aOS(6, _omitFieldNames ? '' : 'harga')
     ..a<$core.int>(7, _omitFieldNames ? '' : 'stok', $pb.PbFieldType.O3)
-    ..a<$core.int>(8, _omitFieldNames ? '' : 'idKategori', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -150,79 +145,6 @@ class Buku extends $pb.GeneratedMessage {
   $core.bool hasStok() => $_has(6);
   @$pb.TagNumber(7)
   void clearStok() => clearField(7);
-
-  @$pb.TagNumber(8)
-  $core.int get idKategori => $_getIZ(7);
-  @$pb.TagNumber(8)
-  set idKategori($core.int v) { $_setSignedInt32(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasIdKategori() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearIdKategori() => clearField(8);
-}
-
-class Kategori extends $pb.GeneratedMessage {
-  factory Kategori({
-    $core.int? idKategori,
-    $core.String? namaKategori,
-  }) {
-    final $result = create();
-    if (idKategori != null) {
-      $result.idKategori = idKategori;
-    }
-    if (namaKategori != null) {
-      $result.namaKategori = namaKategori;
-    }
-    return $result;
-  }
-  Kategori._() : super();
-  factory Kategori.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Kategori.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Kategori', package: const $pb.PackageName(_omitMessageNames ? '' : 'buku'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'idKategori', $pb.PbFieldType.O3)
-    ..aOS(2, _omitFieldNames ? '' : 'namaKategori')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Kategori clone() => Kategori()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Kategori copyWith(void Function(Kategori) updates) => super.copyWith((message) => updates(message as Kategori)) as Kategori;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static Kategori create() => Kategori._();
-  Kategori createEmptyInstance() => create();
-  static $pb.PbList<Kategori> createRepeated() => $pb.PbList<Kategori>();
-  @$core.pragma('dart2js:noInline')
-  static Kategori getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Kategori>(create);
-  static Kategori? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.int get idKategori => $_getIZ(0);
-  @$pb.TagNumber(1)
-  set idKategori($core.int v) { $_setSignedInt32(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasIdKategori() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearIdKategori() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get namaKategori => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set namaKategori($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasNamaKategori() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearNamaKategori() => clearField(2);
 }
 
 class IdRequest extends $pb.GeneratedMessage {
@@ -349,50 +271,6 @@ class BukuList extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<Buku> get buku => $_getList(0);
-}
-
-class KategoriList extends $pb.GeneratedMessage {
-  factory KategoriList({
-    $core.Iterable<Kategori>? kategori,
-  }) {
-    final $result = create();
-    if (kategori != null) {
-      $result.kategori.addAll(kategori);
-    }
-    return $result;
-  }
-  KategoriList._() : super();
-  factory KategoriList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory KategoriList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'KategoriList', package: const $pb.PackageName(_omitMessageNames ? '' : 'buku'), createEmptyInstance: create)
-    ..pc<Kategori>(1, _omitFieldNames ? '' : 'kategori', $pb.PbFieldType.PM, subBuilder: Kategori.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  KategoriList clone() => KategoriList()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  KategoriList copyWith(void Function(KategoriList) updates) => super.copyWith((message) => updates(message as KategoriList)) as KategoriList;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static KategoriList create() => KategoriList._();
-  KategoriList createEmptyInstance() => create();
-  static $pb.PbList<KategoriList> createRepeated() => $pb.PbList<KategoriList>();
-  @$core.pragma('dart2js:noInline')
-  static KategoriList getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<KategoriList>(create);
-  static KategoriList? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<Kategori> get kategori => $_getList(0);
 }
 
 

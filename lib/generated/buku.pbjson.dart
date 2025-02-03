@@ -24,7 +24,6 @@ const Buku$json = {
     {'1': 'tahun_terbit', '3': 5, '4': 1, '5': 5, '10': 'tahunTerbit'},
     {'1': 'harga', '3': 6, '4': 1, '5': 9, '10': 'harga'},
     {'1': 'stok', '3': 7, '4': 1, '5': 5, '10': 'stok'},
-    {'1': 'id_kategori', '3': 8, '4': 1, '5': 5, '10': 'idKategori'},
   ],
 };
 
@@ -33,21 +32,7 @@ final $typed_data.Uint8List bukuDescriptor = $convert.base64Decode(
     'CgRCdWt1EhcKB2lkX2J1a3UYASABKAVSBmlkQnVrdRIUCgVqdWR1bBgCIAEoCVIFanVkdWwSGA'
     'oHcGVudWxpcxgDIAEoCVIHcGVudWxpcxIaCghwZW5lcmJpdBgEIAEoCVIIcGVuZXJiaXQSIQoM'
     'dGFodW5fdGVyYml0GAUgASgFUgt0YWh1blRlcmJpdBIUCgVoYXJnYRgGIAEoCVIFaGFyZ2ESEg'
-    'oEc3RvaxgHIAEoBVIEc3RvaxIfCgtpZF9rYXRlZ29yaRgIIAEoBVIKaWRLYXRlZ29yaQ==');
-
-@$core.Deprecated('Use kategoriDescriptor instead')
-const Kategori$json = {
-  '1': 'Kategori',
-  '2': [
-    {'1': 'id_kategori', '3': 1, '4': 1, '5': 5, '10': 'idKategori'},
-    {'1': 'nama_kategori', '3': 2, '4': 1, '5': 9, '10': 'namaKategori'},
-  ],
-};
-
-/// Descriptor for `Kategori`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List kategoriDescriptor = $convert.base64Decode(
-    'CghLYXRlZ29yaRIfCgtpZF9rYXRlZ29yaRgBIAEoBVIKaWRLYXRlZ29yaRIjCg1uYW1hX2thdG'
-    'Vnb3JpGAIgASgJUgxuYW1hS2F0ZWdvcmk=');
+    'oEc3RvaxgHIAEoBVIEc3Rvaw==');
 
 @$core.Deprecated('Use idRequestDescriptor instead')
 const IdRequest$json = {
@@ -81,17 +66,4 @@ const BukuList$json = {
 /// Descriptor for `BukuList`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List bukuListDescriptor = $convert.base64Decode(
     'CghCdWt1TGlzdBIeCgRidWt1GAEgAygLMgouYnVrdS5CdWt1UgRidWt1');
-
-@$core.Deprecated('Use kategoriListDescriptor instead')
-const KategoriList$json = {
-  '1': 'KategoriList',
-  '2': [
-    {'1': 'kategori', '3': 1, '4': 3, '5': 11, '6': '.buku.Kategori', '10': 'kategori'},
-  ],
-};
-
-/// Descriptor for `KategoriList`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List kategoriListDescriptor = $convert.base64Decode(
-    'CgxLYXRlZ29yaUxpc3QSKgoIa2F0ZWdvcmkYASADKAsyDi5idWt1LkthdGVnb3JpUghrYXRlZ2'
-    '9yaQ==');
 

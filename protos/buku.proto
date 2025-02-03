@@ -9,14 +9,6 @@ service BukuService {
   rpc DeleteBuku (IdRequest) returns (Empty);  
   rpc ListBuku (Empty) returns (BukuList);  
 }  
-
-service KategoriService {
-  rpc CreateKategori (Kategori) returns (Kategori);
-  rpc ReadKategori (IdRequest) returns (Kategori);
-  rpc UpdateKategori (Kategori) returns (Kategori);
-  rpc DeleteKategori (IdRequest) returns (Empty);
-  rpc ListKategori (Empty) returns (KategoriList);
-}
   
 message Buku {  
   int32 id_buku = 1;  
@@ -26,14 +18,8 @@ message Buku {
   int32 tahun_terbit = 5;  
   string harga = 6;  
   int32 stok = 7;  
-  int32 id_kategori = 8;  // New field for category ID
 }  
   
-message Kategori {
-  int32 id_kategori = 1;
-  string nama_kategori = 2;
-}
-
 message IdRequest {  
   int32 id = 1;  
 }  
@@ -42,8 +28,4 @@ message Empty {}
   
 message BukuList {  
   repeated Buku buku = 1;
-}
-
-message KategoriList {
-  repeated Kategori kategori = 1;
 }
